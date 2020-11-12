@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/etienne/Documents/Epita/PROG/etienne.chanudet-21sh-2023/my-redir'
+let g:netrw_dirhist_9='/home/etienne/Documents/Epita/etienne.chanudet-minimake-2023'
+let g:netrw_dirhist_8='/home/etienne/Documents/Epita/etienne.chanudet-myfind-2023'
+let g:netrw_dirhist_7='/home/etienne/Documents/Epita/etienne.chanudet-libstream-2023'
+let g:netrw_dirhist_6='/home/etienne/Documents/Epita/Piscine/etienne.chanudet-piscine-shell-2023/alphanum'
+let g:netrw_dirhist_5='/home/etienne/.vim'
+let g:netrw_dirhist_4='/'
+let g:netrw_dirhist_3='/home'
+let g:netrw_dirhist_2='/home/etienne'
+let g:netrw_dirhist_1='/home/etienne/.vim'
