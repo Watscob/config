@@ -83,6 +83,7 @@ plugins=(
     zsh-z
     sudo
     colored-man-pages
+    zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh

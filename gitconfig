@@ -1,0 +1,21 @@
+[user]
+	name = Etienne Chanudet
+	email = chanudet.etienne@gmail.com
+
+[color]
+        ui = true
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+        pager = less -iXFR
+
+[push]
+        default = simple
+        followTags = true
+
+[merge]
+        tool = fugitive
+
+[mergetool "fugitive"]
+        cmd = vim -f -c "Gvdiffsplit!" "$MERGED"

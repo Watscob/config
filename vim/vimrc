@@ -30,7 +30,7 @@ set cc=79
 set splitbelow
 set splitright
 set cursorline
-set scrolloff=5
+set scrolloff=10
 
 " Colors configuration (DO NOT REMOVE !!!)
 if !has('gui_running')
