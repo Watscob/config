@@ -23,13 +23,14 @@ bindsym $mod+n border normal
 #font xft:URWGothic-Book 11
 #font pango:Inconsolata 13
 #font pango:FiraCode Nerd Font Mono 12
-font pango:Cascadia Code PL 12
+#font pango:Cascadia Code PL 12
+font pango:Fira Code PL 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite #terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -40,18 +41,17 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -show run -modi run
 
-
-
 # launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+#bindsym $mod+z exec --no-startup-id morc_menu
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
 #exec --no-startup-id volumeicon
-#####bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-exec --no-startup-id start-pulseaudio-x11
+#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio --kill && pulseaudio --start
+#exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
@@ -328,12 +328,12 @@ bar {
 #        status_command /usr/bin/i3status-rs /home/etienne/.config/i3status/config.toml
 #        status_command /home/etienne/.config/i3status/mybar.sh
 #	status_command i3status
-	status_command ~/.local/bin/bumblebee-status -m playerctl disk:root memory cpu \
+	status_command /usr/share/bumblebee-status/bumblebee-status -m playerctl disk:root memory cpu \
                  datetime \
 	        -p interval=1s datetime.interval=10s disk.interval=1m root.path=/ \
                 disk.format="{percent:04.02f}%"\
 	        memory.format="{percent:04.02f}%" disk.left-click="nautilus /home/etienne"\
-                datetime.format="%d/%m/%Y %H:%M " datetime.left-click="google-calendar-dark" \
+                datetime.format="%d/%m/%Y %H:%M " \
 	        -t onedark-powerline
         position bottom
 #	tray_output none
@@ -433,5 +433,3 @@ mode "$mode_gaps_outer" {
 
 #i3lock shortcut
 bindsym $mod+Shift+i exec blurlock
-
-
