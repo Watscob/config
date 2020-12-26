@@ -1,21 +1,32 @@
 [user]
-	name = Etienne Chanudet
-	email = chanudet.etienne@gmail.com
+    name = Etienne Chanudet
+    email = etienne.chanudet@epita.fr
 
 [color]
-        ui = true
+    ui = auto
 
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-        pager = less -iXFR
+    excludesfile = ~/.gitignore
+    editor = vim
+    pager = less -iXFR
+
+[diff]
+    mnemonicPrefix = true
+    renames = true
+    tool = vim_diff
+
+[difftool "vim_diff"]
+    cmd = vimdiff $LOCAL $REMOTE
 
 [push]
-        default = simple
-        followTags = true
+    default = simple
+    followTags = true
 
 [merge]
-        tool = fugitive
+    tool = fugitive
 
 [mergetool "fugitive"]
-        cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
+    cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
+
+[pull]
+    rebase = true

@@ -169,7 +169,7 @@ Plugin 'rakr/vim-one'
 Plugin 'lilydjwg/colorizer'
 
 " Snippets
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 
 " Git
 Plugin 'tpope/vim-fugitive'

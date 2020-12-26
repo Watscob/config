@@ -16,4 +16,7 @@
 "endfunction
 "autocmd BufWritePre *.h,*.c,*.cc,*.cpp call Formatonsave()
 
-nnoremap <C-k> :%!clang-format -style=file<CR>
+"nnoremap <C-k> :%!clang-format -style=file<CR>
+
+map <C-K> :py3f /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>

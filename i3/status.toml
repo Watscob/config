@@ -1,0 +1,59 @@
+[theme]
+name = "plain"
+[theme.overrides]
+separator=" "
+critical_bg="#E06C75"
+critical_fg="#282C34"
+good_bg="#98C379"
+good_fg="#282C34"
+idle_bg="#282C34"
+idle_fg="#ABB2BF"
+info_bg="#282C34"
+info_fg="#ABB2BF"
+separator_bg="#292C34"
+separator_fg="#282C34"
+warning_bg="#E5C07B"
+warning_fg="#282C34"
+
+[icons]
+name = "awesome"
+
+[[block]]
+block = "music"
+buttons = ["prev", "play", "next"]
+separator = " • "
+hide_when_empty = true
+interface_name_exclude = [".*kdeconnect.*", "mpd"]
+
+[[block]]
+block = "disk_space"
+path = "/"
+format = "{icon} {used} {unit}"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "battery"
+device = "BAT1"
+info = 50
+good = 95
+interval = 1
+format = "{percentage}%"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%d/%m/%Y %H:%M:%S"

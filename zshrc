@@ -145,6 +145,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias terminal='alacritty'
+alias epita='cd ~/Documents/Epita'
 
 export EDITOR='vim'
 
