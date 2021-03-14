@@ -146,9 +146,17 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
+alias terminal='alacritty'
+alias epita='cd ~/Documents/epita'
+
+alias python='python3'
 
 export EDITOR='vim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export PGDATA="/home/etienne/postgres_data"
+export PGHOST="/tmp"
+export PATH="/usr/lib/postgresql/12/bin:$PATH:/usr/bin"
