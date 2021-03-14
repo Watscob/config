@@ -44,6 +44,7 @@ endif
 let g:onedark_terminal_italics=1
 colorscheme one
 set background=dark
+hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme = 'one'
 
 " Don't show current mode
@@ -67,10 +68,11 @@ set autoindent
 set smartindent
 set smarttab
 set breakindent
-set list listchars=trail:·,tab:⯈·,eol:↵
+set list listchars=trail:·,tab:>·,eol:↵
 
 " Makefile
 autocmd Filetype make setlocal noexpandtab
+autocmd Filetype go setlocal noexpandtab
 
 " Search settings
 set nohlsearch
@@ -116,6 +118,7 @@ nnoremap Q <nop>
 
 " C main shortcut
 autocmd FileType c inoremap <buffer> main<CR> int main(int argc, char *argv[])<CR>{<CR><CR>}<up><TAB>
+autocmd FileType cpp inoremap <buffer> main<CR> int main(int argc, char *argv[])<CR>{<CR><CR>}<up><TAB>
 
 " Show netrw tree
 noremap <leader>t :Lexplore<CR>
@@ -168,8 +171,11 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'rakr/vim-one'
 Plugin 'lilydjwg/colorizer'
 
+" C++
+Plugin 'bfrg/vim-cpp-modern'
+
 " Snippets
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -183,6 +189,9 @@ Plugin 'romainl/vim-qf'
 
 " Auto complete
 Plugin 'ajh17/vimcompletesme'
+
+" Golang
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on

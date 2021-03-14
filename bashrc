@@ -143,3 +143,4 @@ ex ()
 alias i3lock='blurlock'
 alias docs='cd ~/Documents/'
 alias vi=vim
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}

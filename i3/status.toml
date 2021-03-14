@@ -20,10 +20,9 @@ name = "awesome"
 
 [[block]]
 block = "music"
+dynamic_width = true
 buttons = ["prev", "play", "next"]
-separator = " • "
 hide_when_empty = true
-interface_name_exclude = [".*kdeconnect.*", "mpd"]
 
 [[block]]
 block = "disk_space"
@@ -42,6 +41,14 @@ format_mem = "{Mup}%"
 format_swap = "{SUp}%"
 
 [[block]]
+block = "nvidia_gpu"
+label = ""
+show_memory = false
+show_clocks = false
+show_temperature = false
+interval = 1
+
+[[block]]
 block = "cpu"
 interval = 1
 
@@ -54,6 +61,14 @@ interval = 1
 format = "{percentage}%"
 
 [[block]]
+block = "sound"
+driver = "pulseaudio"
+device_kind = "sink"
+natural_mapping = true
+show_volume_when_muted = true
+on_click = "pavucontrol"
+
+[[block]]
 block = "time"
 interval = 1
-format = "%d/%m/%Y %H:%M:%S"
+format = "%d.%m %H:%M:%S"
