@@ -16,4 +16,5 @@ Log out and log in again.
 Links:
 ```
 https://github.com/dunst-project/dunst/blob/master/dunstrc
+https://framagit.org/gagbo/dotfiles/blob/dd02a0c6f733deca71abb3ab354520dee3c55c63/dunst/.config/dunst/dunstrc
 ```

@@ -29,6 +29,7 @@ always_run_script = true
 title = Dunst
 class = Dunst
 bounce_freq = 3
+ellipsize = middle
 
 idle_threshold = 120
 sticky_hostory = yes
