@@ -7,7 +7,7 @@ sudo vim /usr/share/dbus-1/services/org.knopwob.dunst.service
 and change
 `Exec=/usr/bin/dunst`
 to
-`Exec=/usr/bin/dunst /home/etienne/.config/dunst/dunstrc`.
+`Exec=/usr/bin/dunst -config ~/.config/dunst/dunstrc`.
 
 Then, copy and paste the `dunstrc` file to `~/.config/dunst/dunstrc`.
 
