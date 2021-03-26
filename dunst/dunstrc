@@ -8,7 +8,7 @@ plain_text = no
 sort = yes
 indicate_hidden = yes
 alignment = left
-show_age_threshold = 10
+show_age_threshold = 15
 word_wrap = no
 frame_width = 1
 transparency = 0
@@ -46,13 +46,13 @@ close = ctrl+space
 close_all = ctrl+shift+space
 
 [urgency_low]
-timeout = 10
+timeout = 15
 background = "#232c34"
 foreground = "#abb2bf"
 frame_color = "#98c379"
 
 [urgency_normal]
-timeout = 10
+timeout = 15
 background = "#232c34"
 foreground = "#abb2bf"
 frame_color = "#61afef"
