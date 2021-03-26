@@ -12,3 +12,8 @@ to
 Then, copy and paste the `dunstrc` file to `~/.config/dunst/dunstrc`.
 
 Log out and log in again.
+
+Links:
+```
+https://github.com/dunst-project/dunst/blob/master/dunstrc
+```
