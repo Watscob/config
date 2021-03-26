@@ -1,0 +1,62 @@
+[global]
+format = "<b>%s</b>\n%b\n%p"
+geometry = "300x40-10+10"
+font = DejaVu Sans Mono 10
+allow_markup = yes
+markup = full
+plain_text = no
+sort = yes
+indicate_hidden = yes
+alignment = left
+show_age_threshold = 10
+word_wrap = yes
+frame_width = 1
+transparency = 0
+shrink = no
+monitor = 0
+ignore_newline = no
+follow = mouse
+show_indicators = yes
+line_height = 4
+padding = 8
+horizontal_padding = 8
+separator_color = frame
+icon_position = right
+max_icon_size = 100
+stack_duplicates = true
+hide_duplicate_count = no
+always_run_script = true
+title = Dunst
+class = Dunst
+
+idle_threshold = 120
+sticky_hostory = yes
+history_length = 20
+
+#icon_folders = /usr/share/icons/hicolor/16x16
+icon_foldes = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/:/usr/share/icons/Adwaita/16x16/status/
+startup_notification = false
+dmenu = /usr/bin/rofi -p dunst:
+browser = /usr/bin/brave-browser -new-tab
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+
+[urgency_low]
+timeout = 10
+background = "#232c34"
+foreground = "#abb2bf"
+frame_color = "#98c379"
+
+[urgency_normal]
+timeout = 10
+background = "#232c34"
+foreground = "#abb2bf"
+frame_color = "#61afef"
+
+[urgency_critical]
+timeout = 0
+background = "#232c34"
+foreground = "#abb2bf"
+frame_color = "#e06c75"
