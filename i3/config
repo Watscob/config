@@ -49,7 +49,8 @@ bindsym XF86AudioMute exec --no-startup-id /usr/bin/pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec --no-startup-id /usr/bin/pulseaudio-ctl mute-input
 
 # Screenshot
-bindsym --release Print exec /usr/bin/gnome-screenshot -a
+#bindsym --release Print exec /usr/bin/gnome-screenshot -a
+bindsym --release Print exec /usr/bin/flameshot gui
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -184,6 +185,7 @@ for_window [urgent=latest] focus
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+exec --no-startup-id restart
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -235,7 +237,7 @@ bar {
                 statusline #abb2bf
                 separator  #5c6370
 
-#                          border  backgr. text
+        #                          border  backgr. text
                 focused_workspace  #61AFEF #61AFEF #282C34
                 active_workspace   #abb2bf #98C379 #5c6370
                 inactive_workspace #282c34 #282c34 #ABB2BF
@@ -261,5 +263,6 @@ bindsym $mod+Shift+i exec lock
 exec_always --no-startup-id xautolock -time 10 -locker "if [$(grep -r \"RUNNING\" /proc/asound | wc -l) -eq 0]; then xset dpms force suspend && lock; fi"
 exec_always --no-startup-id xautolock -time 30 -locker "if [$(grep -r \"RUNNING\" /proc/asound | wc -l) -eq 0]; then systemctl suspend; fi"
 exec_always --no-startup-id /usr/bin/battery-notifier
-exec_always --no-startup-id feh --bg-scale /home/etienne/Images/star-wars-the-rise-of-skywalker-new-5k-rh-1920x1080.jpg
+#exec_always --no-startup-id feh --bg-scale /home/etienne/Images/star-wars-the-rise-of-skywalker-new-5k-rh-1920x1080.jpg
+exec_always --no-startup-id feh --bg-scale /home/etienne/Images/one_piece_wano.png
 

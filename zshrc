@@ -92,6 +92,7 @@ plugins=(
     sudo
     colored-man-pages
     zsh-interactive-cd
+    zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -135,6 +136,7 @@ ex ()
 alias zshconfig="vim $HOME/.zshrc"
 alias ohmyzsh="vim $HOME/.oh-my-zsh"
 alias vimconfig="vim $HOME/.vimrc"
+alias i3config="vim $HOME/.config/i3/config"
 
 alias vi="vim"
 alias i3lock="blurlock"
@@ -148,6 +150,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias terminal='alacritty'
 alias epita='cd ~/Documents/epita'
+alias raspberrypi='ssh ubuntu@raspberrypi'
+alias clf="clang-format -i"
 
 alias python='python3'
 
