@@ -57,7 +57,7 @@ device = "BAT1"
 info = 50
 good = 95
 interval = 1
-format = "{percentage}%"
+format = "{percentage}"
 
 [[block]]
 block = "sound"
