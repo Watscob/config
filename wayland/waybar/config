@@ -1,0 +1,83 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["disk", "memory", "cpu", "network", "battery", "pulseaudio", "clock", "idle_inhibitor"],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "clock": {
+        "interval": 1,
+        "format": " {:%d.%m.%Y %H:%M:%S}",
+        "tooltip": false
+    },
+    "disk": {
+        "interval": 60,
+        "format": " {used}"
+    },
+    "cpu": {
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 1
+    },
+    "memory": {
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
+        "format": " {}%",
+        "interval": 1
+    },
+    "battery": {
+        "states": {
+            "critical": 30
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+        "interval": 1
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ifname}",
+        "format-linked": " {ifname}",
+        "format-disconnected": "",
+        "tooltip": false,
+        "interval": 1
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}% ",
+        "format-bluetooth-muted": "ﱝ ",
+        "format-muted": "ﱝ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}

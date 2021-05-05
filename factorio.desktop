@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Factorio
+Exec=/usr/share/factorio/bin/x64/factorio
+Icon=/usr/share/factorio/factorio.png
+Type=Application
+Categories=Game;
