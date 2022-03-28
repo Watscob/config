@@ -24,7 +24,8 @@
 }
 
 #input {
-    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 0px;
     border: none;
     border-bottom: 3px solid #61afef;
@@ -38,8 +39,8 @@
 }
 
 #outer-box {
-    margin: 5px;
-    padding:20px;
+    margin: 2px;
+    padding:0px;
     background-color: #282c34;
 }
 
