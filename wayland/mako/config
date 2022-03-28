@@ -10,15 +10,18 @@ icons=1
 max-icon-size=84
 default-timeout=15000
 ignore-timeout=1
+margin=20
 padding=8
 markup=1
 icon-path=/usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/:/usr/share/icons/Adwaita/16x16/status/
 
 [urgency=low]
 border-color=#5c6370
+default-timeout=6000
 
 [urgency=normal]
 border-color=#61afef
+default-timeout=6000
 
 [urgency=high]
 border-color=#e06c75

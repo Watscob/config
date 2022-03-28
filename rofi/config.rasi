@@ -1,3 +1,9 @@
+configuration {
+    show-icons: true;
+    cycle: false;
+    sort: true;
+}
+
 * {
   black:      #000000;
   red:        #e06c75;
@@ -19,68 +25,77 @@
   text-color: @text;
 }
 
-window {
+#window {
   transparency: "real";
   fullscreen: false;
   background-color: @bg;
+  border: 2px;
   border-color: @blue;
 }
 
-mainbox {
+#mainbox {
   padding: 0 0;
 }
 
-inputbar {
+#inputbar {
   padding: 10px 0px 10px 8px;
-  border: 0px 0px 1px 0px;
+  border: 0px 0px 2px 0px;
   border-color: @blue;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
-  background-color: #2c313a;
+  background-color: @bg;
 }
 
-prompt {
+#prompt {
   padding: 5px 0px;
   text-color: @blue;
 }
 
-textbox-prompt-colon {
+#textbox-prompt-colon {
   padding: 5px 10px;
   expand: false;
   str: "►";
   text-color: @text-alt;
 }
 
-entry {
+#entry {
   padding: 5px 10px;
+  text-color: @text-alt;
 }
 
-listview {
+#listview {
   spacing: 5px;
   dynamic: true;
   scrollbar: false;
-  background-color: #2c313a;
+  background-color: @bg;
 }
 
-element {
+#element {
+    border: 0;
+    padding: 4px;
+}
+
+#element.normal.normal, element.alternate.normal {
   padding: 5px;
+  background-color: @bg;
   text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
+  highlight: bold #98c379;
 }
 
-element selected {
+#element.selected.normal {
   background-color: @emphasis;
   text-color: @text;
+  highlight: bold #98c379;
 }
 
-element urgent, element selected urgent {
+#element.normal.urgent, element.selected.urgent, element.alternate.urgent{
   text-color: @red;
 }
 
-element active, element selected active {
+#element.normal.active, element.selected.active, element.alternate.active{
   text-color: @purple;
 }
 
-message {
+#message {
   padding: 5px;
   border-radius: 3px;
   background-color: @emphasis;
@@ -88,7 +103,7 @@ message {
   border-color: @cyan;
 }
 
-button selected {
+#button.selected {
   padding: 5px;
   border-radius: 3px;
   background-color: @emphasis;

@@ -1,0 +1,64 @@
+/*::root {
+    --black:      #000000;
+    --red:        #e06c75;
+    --green:      #98c379;
+    --yellow:     #e5c07b;
+    --blue:       #61afef;
+    --mangenta:   #c678dd;
+    --cyan:       #56b6c2;
+    --emphasis:   #5c6370;
+    --text:       #abb2bf;
+    --text-alt:   #abb2bf;
+    --fg:         #5c6370;
+    --bg:         #282c34;
+}*/
+
+*{
+    font-family: DejaVu Sans Mono Nerd Font, FontAwesome, Nerd Font;
+    font-size: 15px;
+}
+
+#window {
+    background-color: #282c34;
+    border: 2px solid #61afef;
+}
+
+#input {
+    margin: 5px;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 3px solid #61afef;
+    background-color: #282c34;
+    color: #abb2bf;
+}
+
+#inner-box {
+    background-color: #282c34;
+
+}
+
+#outer-box {
+    margin: 5px;
+    padding:20px;
+    background-color: #282c34;
+}
+
+#scroll {
+}
+
+#text {
+    padding: 5px;
+    color: #abb2bf;
+}
+
+#entry:nth-child(even){
+    background-color: #353B47;
+}
+
+#entry:selected {
+    background-color: #61afef;
+}
+
+#text:selected {
+    color: white;
+}
