@@ -20,32 +20,20 @@ hide_edge_borders none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Code 12, FontAwesome 12.
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#  exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/scripts/lock.sh --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#font pango:Fira Code 12, FontAwesome 12.
+font pango:DejaVu Sans Mono, FontAwesome 12.5
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+exec --no-startup-id $HOME/.config/xob/load-bars.sh
+#bindsym XF86AudioRaiseVolume exec pamixer -ui 2
+#bindsym XF86AudioLowerVolume exec pamixer -ud 2
+#bindsym XF86AudioMute exec pamixer --toggle-mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/xob/volume-osd.sh -u 2
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/xob/volume-osd.sh -d 2
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/xob/volume-osd.sh -m
 
-# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-# bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/xob/backlight-osd.sh -d 2
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/xob/backlight-osd.sh -u 2
 
 # Screenshot
 bindsym --release Print exec flameshot gui
@@ -60,7 +48,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -modi run
+bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -161,13 +149,17 @@ bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+e exec rofi -show p -modi p:rofi-power-menu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -196,27 +188,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        font pango:DejaVu Sans Mono, FontAwesome 12.5
-        status_command /home/etienne/.cargo/bin/i3status-rs ~/.config/i3/status.toml
-        position bottom
-        strip_workspace_numbers yes
-
-        colors {
-                background #282c34
-                statusline #abb2bf
-                separator  #5c6370
-
-        #                          border  backgr. text
-                focused_workspace  #61AFEF #61AFEF #282C34
-                active_workspace   #abb2bf #98C379 #5c6370
-                inactive_workspace #282c34 #282c34 #ABB2BF
-                binding_mode       #61AFEF #61AFEF #282c34
-                urgent_workspace   #E06C75 #E06C75 #282C34
-        }
-}
+# Polybar
+exec_always --no-startup-id /home/etienne/.config/polybar/launch.sh
 
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
@@ -229,7 +202,7 @@ client.placeholder      #282C34 #282C34 #abb2bf #282C34
 client.background       #282C34
 
 # i3-gaps config
-gaps inner 20
+gaps inner 15
 gaps outer 0
 smart_gaps on
 smart_borders no_gaps
@@ -239,19 +212,22 @@ hide_edge_borders smart_no_gaps
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
 # Exec compositor for transparency
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # Lock shortcut
-bindsym $mod+Shift+i exec ~/.config/scripts/lock.sh
+bindsym $mod+Shift+i exec i3lock-fancy
 
 # Lock and screensaver
-exec_always --no-startup-id xautolock -detectsleep \
-        -time 5 -locker "~/.config/scripts/lock.sh" \
-        -notify 240 -notifier "xset dpms force off" \
-        -killtime 10 -killer "systemctl suspend" \
-         -corners ----
-
-# exec --no-startup-id xset set 600
-# exec --no-startup-id xset dpms 0 0 60
-# exec --no-startup-id xss-lock "~/.config/scripts/lock.sh && systemctl suspend"
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/scripts/lock.sh --nofork
+exec --no-startup-id xidlehook \
+        --detect-sleep \
+        --not-when-fullscreen \
+        --not-when-audio \
+        --timer 60 \
+            'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
+            'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+        --timer 10 \
+            'i3lock-fancy' \
+            'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+        --timer 600 \
+            'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; systemctl suspend' \
+            ''

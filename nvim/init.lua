@@ -1,0 +1,7 @@
+require 'core'
+require 'plugins'
+require 'lsp'
+require 'telescope'
+require 'keymaps'
+require 'autopairs'
+require 'theme'
