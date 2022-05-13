@@ -1,0 +1,22 @@
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"     # Bumblebee defaults to false
+    Option      "AutoAddGPU" "false"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    BusID 	"PCI:1:0:0"
+    VendorName  "NVIDIA Corporation"
+    Option "ProbeAllGpus" "false"
+    Option "NoLogo" "true"
+    Option "UseEDID" "true"                 # Bumblebee defaults to false
+    Option "AllowEmptyInitialConfiguration" # Add this line
+#   Option "UseDisplayDevice" "none"        # Remove or comment out this line
+EndSection
+
+Section "Screen"                            # Add this section
+    Identifier "Screen0"
+    Device "DiscreteNvidia"
+EndSection

@@ -1,7 +1,0 @@
-require 'autocmds'
-require 'autopairs'
-require 'core'
-require 'keymaps'
-require 'line'
-require 'plugins'
-require 'theme'

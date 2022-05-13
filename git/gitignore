@@ -1,8 +1,0 @@
-*.o
-*.a
-*.so
-*.gch
-*.pyc
-.ssh/*
-tags
-.pre-commit-config.yaml
