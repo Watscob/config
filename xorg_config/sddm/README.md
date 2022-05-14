@@ -11,5 +11,5 @@ sudo systemctl enable sddm.service
 
 2. Copy the config file
 ```sh
-cp default.conf /etc/sddm.conf.d/
+sudo cp default.conf /etc/sddm.conf.d/
 ```

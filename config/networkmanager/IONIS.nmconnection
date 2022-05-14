@@ -3,7 +3,7 @@ key-mgmt=wpa-eap
 
 [connection]
 id=IONIS
-uuid=<UUID CREATED BY uuidgen>
+uuid=UUID
 type=wifi
 
 [ipv6]
@@ -16,9 +16,9 @@ security=802-11-wireless-security
 
 [802-1x]
 eap=peap
-identity=<MAIL-EPITA>
+identity=MAILEPITA
 phase2-auth=mschapv2
-password=<PASSWORD>
+password=PASSWORD
 
 [ipv4]
 method=auto
