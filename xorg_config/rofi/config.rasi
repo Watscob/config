@@ -21,7 +21,7 @@ configuration {
   spacing: 0;
   background-color: transparent;
 
-  font: "Fira Code 12";
+  font: "DejaVu Sans Mono 12";
   text-color: @text;
 }
 
